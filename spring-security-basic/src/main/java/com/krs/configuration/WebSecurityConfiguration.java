@@ -65,13 +65,6 @@ public class WebSecurityConfiguration {
         return new InMemoryUserDetailsManager(user1, user2);
     }
 
-    @Bean
-    public UserDetailsManager users() {
-        UserDetails user1 = User.withUsername("dev").password(encoder().encode("dev")).roles("EMPLOYEE").build();
-        UserDetails user2 = User.withUsername("test").password(encoder().encode("test")).roles("ADMIN").build();
-        return new InMemoryUserDetailsManager(user1, user2);
-    }
-
 
     /**
      * Password encoder for encoding the passwords
